@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/peach_memo_db
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        globally_quoted_identifiers: true
+    database: postgresql
+
+  mail: localhost
+  post: 1025
+  username: lee
+  password: 1234
+  properties:
+    mail:
+      smtp:
+        trust: "*"
+      auth: true
+      starttls:
+        enable: true
+      connectiontimeout: 5000
+      timeout: 3000
+      writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: BZ9KuKmZrUCeBRY6Ybsw2Af9IEr+zUIhPV1GSSrv1g+FxoRDLx/a83ChoQOvqSfhDnvmuUuR+zoiPlLmLxjlE1cRgEEV2S/LWVpgAc+oePMVyxOa4ydZ18/lx4MNOEtKV6Z5hxIzVlzTi9lCN5ms6q/lZoQOdarx7IR3695qbU8=
+      access-expiration: 9000000
+      refresh-expiration: 2592000000
+
+    mailing:
+      activation-token-length: 6
+      sender-email: peach_memo@mail.com
